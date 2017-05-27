@@ -8,7 +8,7 @@
 	<body>
 		<div class="wrapper">
 			<div class="main">
-				<canvas id="canvas"></canvas>
+				<canvas id="canvas" width="600" height="600"></canvas>
 			</div>
 			<div class="others">
 
@@ -26,10 +26,5 @@
 		var app = require('./scripts/modules/capture-frames')(document.querySelector('video.capture'));
 		app.startCron();
 
-		// var a = require('./renderer.js');
-		// a.init();
-		// a.createFrames();
-		// var b = require('./test');
-		// b();
 	</script>
 </html>
