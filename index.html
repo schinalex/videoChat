@@ -21,7 +21,7 @@
 		var App = {};
 		var events = require('events');
 		App.events = new events();
-		require('./scripts/modules/udp-server.js')();
+		require('./scripts/modules/udp-server.js');
 		require('./scripts/modules/init-camera.js');
 		var app = require('./scripts/modules/capture-frames')(document.querySelector('video.capture'));
 		app.startCron();

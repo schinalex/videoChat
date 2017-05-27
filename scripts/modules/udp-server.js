@@ -3,7 +3,7 @@
 	var dgram = require('dgram');
 	var socket = dgram.createSocket('udp4');
 
-	server.bind(41111);
+	socket.bind(41111);
 
 	socket.on('error', function (err) {
 		console.log('server error:\n',err.stack);
@@ -11,7 +11,7 @@
 	});
 
 	socket.on('listening', function () {
-		var address = server.address();
+		var address = socket.address();
 		console.log('server started at: ', address.address + ':' + address.port);
 	});
 

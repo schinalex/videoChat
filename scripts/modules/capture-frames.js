@@ -1,5 +1,5 @@
 
-module.exports = (function (video) {
+module.exports = function (video) {
 	var dgram = require('dgram');
 	var socket = dgram.createSocket('udp4');
 
@@ -11,11 +11,12 @@ module.exports = (function (video) {
 		if (!timer) {
 			timer = setInterval(function () {
 				app.getFrame().then(function (base64Data) {
-					socket.send(base64Data, 41111, '10,1,0,222', function (err) {
+					socket.send(base64Data, 41111, '10.1.0.222', function (err) {
 						if (err) {
 							console.warn(err);
+						} else {
+							console.log('succesfuly sent');
 						}
-						console.log('succesfuly sent');
 					});
 				});
 			}, 33);
@@ -23,7 +24,7 @@ module.exports = (function (video) {
 	};
 
 	app.getFrame = function () {
-		new Promise(function(resolve, reject) {
+		return new Promise(function(resolve, reject) {
 			ctx.clearRect(0,0,800,800);
 			ctx.drawImage(video,0,0);
 			resolve(canvas.toDataURL());
@@ -37,4 +38,4 @@ module.exports = (function (video) {
 
 
 	return app;
-})(video);
+};
