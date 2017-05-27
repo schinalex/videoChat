@@ -11,7 +11,7 @@ module.exports = (function (video) {
 		if (!timer) {
 			timer = setInterval(function () {
 				app.getFrame().then(function (base64Data) {
-					socket.send(base64Data, 41111, 'localhost', function (err) {
+					socket.send(base64Data, 41111, '10,1,0,222', function (err) {
 						if (err) {
 							console.warn(err);
 						}
