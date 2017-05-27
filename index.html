@@ -1,19 +1,31 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Hello World!</title>
-  </head>
-  <body>
-    <h1>Hello World!</h1>
-    <!-- All of the Node.js APIs are available in this renderer process. -->
-    We are using Node.js <script>document.write(process.versions.node)</script>,
-    Chromium <script>document.write(process.versions.chrome)</script>,
-    and Electron <script>document.write(process.versions.electron)</script>.
-  </body>
+	<head>
+		<meta charset="UTF-8">
+		<title>Hello World!</title>
+		<link rel="stylesheet" href="./style/style.css">
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="main">
+				<canvas id="canvas"></canvas>
+			</div>
+			<div class="others">
 
-  <script>
-    // You can also require other files to run in this process
-    require('./renderer.js')
-  </script>
+			</div>
+		</div>
+		<video class="capture" autoplay></video>
+	</body>
+
+	<script>
+		var App = {};
+		var events = require('events');
+		App.events = new events();
+		require('./scripts/modules/init-camera.js');
+		// var a = require('./renderer.js');
+		// a.init();
+		// a.createFrames();
+		// var b = require('./test');
+		// b();
+	</script>
 </html>

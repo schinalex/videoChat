@@ -1,0 +1,32 @@
+div.myself {
+
+}
+
+video.capture {
+	position: absolute;
+	max-width: 200px;
+	bottom: 0;
+	max-height: auto;
+}
+
+div.wrapper {
+	width: 100%;
+	height: 100%;
+}
+
+div.main {
+	position: relative;
+	width: 79%;
+	height: 100%;
+	display: inline-block;
+	background: red;
+}
+
+div.others {
+	background: blue;
+	display: inline-block;
+	position: relative;
+	width: 19%;
+	height: 150px;
+	vertical-align: top;
+}
